@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas</title>
+    <script src="./static/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <span>{{message}}</span>
+        <canvas id="canvas" width="1000" height="1000" style="width:500px;height:500px;background: #ddd"></canvas>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'message'
+            },
+            mounted() {
+                var myCanvas = document.getElementById('canvas');
+                var context = myCanvas.getContext('2d');
+
+                // 绘制矩形
+                // context.fillRect(x, y, width, height);
+                // context.strokeRect(x, y, width, height);
+
+                // 绘制线条(路径)
+                // 设置路径 --> 设置路径的起点  --> 设置路径到达的终点  -->  输出路径图
+                // context.beginPath();
+                // context.moveTo(x, y);
+                // context.lineTo(x, y);
+                // context.closePath(); 自己闭合路径，最后绘制的点和起点会连接起来
+                // context.stroke();
+                // context.fill();
+
+
+                // 绘制圆弧
+                // context.arc(x, y, radius, startAngle, endAngle, anticlockwise);
+                /**
+                 * (x,y)          圆心
+                 * radius         半径
+                 * startAngle     起始角度(3点钟方向为0度)(角度计算用弧度表示，360度使用弧度来表示则是 2π 弧度)
+                 * endAngle       结束角度(3点钟方向为0度)
+                 * anticlockwise  是否逆时针，默认为false，可选参数，Boolean
+                 * 
+                 * var degree = 1; // 表示 1°
+                 * var radians = degree * (Math.PI / 180); // 0.0175弧度
+                 */
+                 
+
+                // 绘制文本
+                // context.fillText('text', x, y)
+                // context.strokeText('text', x, y)
+                // (x, y) 文本左下角的坐标
+
+
+                // context.font()
+                // context.fillStyle = color;
+                // context.strokeStyle = color;
+                // context.lineWidth = number;
+
+                // 清除画布
+                // context.clear(x, y, width, height);
+
+                // 绘制图片
+                // var image = new Image();
+                // image.src = '';
+                // image.onload = function() {
+                //     context.drawImage(image, x, y, [width, height])
+                // }
+
+                // 裁剪图像
+                // context.drawImage(image, source_x, source_y, source_width, source_height, x, y, width, heigh);
+
+
+            }
+            
+        })
+    </script>
+
+</body>
+</html>
